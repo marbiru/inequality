@@ -1,14 +1,19 @@
-body {
-  font: 10px sans-serif;
+style.css
+
+.chart {
+
 }
 
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
+.main text {
+    font: 10px sans-serif;	
 }
 
-.dot {
-  stroke: #000;
+.axis line, .axis path {
+    shape-rendering: crispEdges;
+    stroke: black;
+    fill: none;
+}
+
+circle {
+    fill: steelblue;
 }

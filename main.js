@@ -38,6 +38,16 @@ function draw_chart() {
   context.fillText("Position in National Income Distribution", 120, 550);
   context.fillText("Position in International Income Distribution", 15, 10);
 
+  //draw figures
+  var poorPerson = document.getElementById("poorPerson");
+  context.drawImage(poorPerson, 0, 375);
+
+  var medianPerson = document.getElementById("medianPerson");
+  context.drawImage(medianPerson, 200, 200);
+
+  var richPerson = document.getElementById("richPerson");
+  context.drawImage(richPerson, 400, 0);
+
 };
 
 draw_chart();

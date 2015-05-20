@@ -1,13 +1,10 @@
-.chart rect {
-  fill: steelblue;
+h1 {
+  color: #1c2f2f;
+  font-size: 30px;
+  font-family: "Merriweather", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
-.chart text {
-  fill: white;
-  font: 10px sans-serif;
-  text-anchor: end;
-}
-
-.chart circle {
-  fill: steelblue;
+#chart_div {
+	text-align: center;
 }

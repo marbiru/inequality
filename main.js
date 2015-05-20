@@ -29,24 +29,60 @@ function draw_chart() {
   context.moveTo(0, 10);
   context.lineTo(5, 5);
   context.lineTo(10, 10);
+  //ticks on horizontal axis
+  context.moveTo(35, 495);
+  context.lineTo(35, 505);
+  context.moveTo(250, 495);
+  context.lineTo(250, 505);
+  context.moveTo(450, 495);
+  context.lineTo(450, 505);
+  //ticks on vertical axis
+
+  for (var y = 55.5; y < 500; y += 50) {
+  context.moveTo(0, y);
+  context.lineTo(500, y);
+  }
+
+  
 
   context.strokeStyle = "#000";
   context.stroke();
 
   // axis labels
+  context.font = "18px sans-serif";
+  context.fillText("Position in National Income Distribution", 90, 580);
+  // context.fillText("Position in International Income Distribution", 15, 10);
+
+  // horizontal axis labels
   context.font = "14px sans-serif";
-  context.fillText("Position in National Income Distribution", 120, 550);
-  context.fillText("Position in International Income Distribution", 15, 10);
+  context.fillText("Bottom 5%", 10, 530);
+  context.fillText("National Average", 220, 530);
+  context.fillText("Top 5%", 430, 530);
+
+  // vertical axis labels
+  for (var y = 55.5; y < 500; y += 50) {
+
+  context.fillText("X%", 0, y);
+  }
 
   //draw figures
-  var poorPerson = document.getElementById("poorPerson");
-  context.drawImage(poorPerson, 0, 375);
+  var poorPersonIndia = document.getElementById("poorPersonIndia");
+  context.drawImage(poorPersonIndia, 0, 450);
 
-  var medianPerson = document.getElementById("medianPerson");
-  context.drawImage(medianPerson, 200, 200);
+  var medianPersonIndia = document.getElementById("medianPersonIndia");
+  context.drawImage(medianPersonIndia, 200, 360);
 
-  var richPerson = document.getElementById("richPerson");
-  context.drawImage(richPerson, 400, 0);
+  var richPersonIndia = document.getElementById("richPersonIndia");
+  context.drawImage(richPersonIndia, 400, 100);
+
+  var poorPersonUS = document.getElementById("poorPersonUS");
+  context.drawImage(poorPersonUS, 0, 100);
+
+  var medianPersonUS = document.getElementById("medianPersonUS");
+  context.drawImage(medianPersonUS, 200, 50);
+
+  var richPersonUS = document.getElementById("richPersonUS");
+  context.drawImage(richPersonUS, 400, 0);
 
 };
 

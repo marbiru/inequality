@@ -2,6 +2,7 @@
 <html>
   <head>
  <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+ <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href="style.css">
   </head>
@@ -13,29 +14,23 @@
   <div class="pure-u-1-3 pure-u-md-1-3">
 
   <h1> International Income Inequality </h1>
-  <p> Before we begin: imagine a very, very rich person in India. She's not the richest person in the country (who makes billions every year, certainly), but she's very, very rich. If we were to split India into 20 groups according to income and line them up in a row, she would be the average member of the richest group.</p>
+  <p> Before we begin: imagine a very, very rich person in India. She's not the richest person in the country (who makes hundreds of millions each year, certainly), but she's close to the top of the national income distribution. If we were to split India into 20 groups according to income and line them up in a row, she would be the average member of the richest group.</p>
 
    <img src="images/IndiaTopVentile.png" >
 
-    <p> Now imagine a very, very poor person in the U.S. She's not the absolute poorest person in the country (who makes $0 a year) but she's very, very poor. If we were to split the U.S. into 100 groups according to income and line them up in a row, she would be the average member from the poorest group.</p>
+    <p> Now imagine a very, very poor person in the U.S. She's not the absolute poorest person in the country (who makes $0 a year) but she's close to the bottom of the national income distribution. If we were to split the U.S. into 20 groups according to income and line them up in a row, she would be the average member from the poorest group.</p>
 
     <img src="images/USBottomVentile.png" >
 
-    <p> Here's the big question: how do you think these two people compare? (This will not be recorded; it's only for you to think about).</p>
-  <p> 
-    India: 
-    <img id="poorPersonIndia" src="images/poor_person_blue.png" alt="Poor Person India">
-  <img id="medianPersonIndia" src="images/median_person_blue.png" alt="Median Person India">
-   <img id="richPersonIndia" src="images/rich_person_blue.png" alt="Rich Person India">
- </p>
- <p>
-  US:
-  <img id="poorPersonUS" src="images/poor_person_red.png" alt="Poor Person US">
-  <img id="medianPersonUS" src="images/median_person_red.png" alt="Median Person US">
-   <img id="richPersonUS" src="images/rich_person_red.png" alt="Rich Person US">
-</p>
+    <p> The U.S. is a high-income country, and India is a middle-income country, so it's not surprising that the average person in the U.S. has a much higher income than the average person in India.</p>
+
+    <canvas id="median_chart" width="600" height="600"></canvas>
+
+    <p> But how do you think the very rich person from the U.S. compares to the very poor person from India?</p>
+ 
     <canvas id="chart" width="600" height="600"></canvas>
 
+    <p id="footer">A work in progress by <a href="http://www.uribram.com">Uri Bram</p>
   </div>
   <div class="pure-u-1-3 pure-u-md-1-3"><p></p></div>
 </div>

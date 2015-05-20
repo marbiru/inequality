@@ -3,14 +3,14 @@ function draw_chart() {
   var context = chart_canvas.getContext("2d");
   
   //grid lines
-  for (var x = 5.5; x < 500; x += 10) {
+  for (var x = 50.5; x < 550.5; x += 10) {
   context.moveTo(x, 0);
-  context.lineTo(x, 500);
+  context.lineTo(x, 600.5);
   }
 
-  for (var y = 5.5; y < 500; y += 10) {
+  for (var y = 50.5; y < 550.5; y += 10) {
   context.moveTo(0, y);
-  context.lineTo(500, y);
+  context.lineTo(550.5, y);
   }
 
   context.strokeStyle = "#eee";
@@ -18,17 +18,17 @@ function draw_chart() {
 
   //vertical axis
   context.beginPath();
-  context.moveTo(4.5, 500);
-  context.lineTo(500, 500);
+  context.moveTo(50, 550);
+  context.lineTo(550, 550);
   context.moveTo(495, 495);
   context.lineTo(500, 500);
   context.lineTo(495, 505);
-  //horizontal axis
-  context.moveTo(5, 5);
-  context.lineTo(5, 500);
-  context.moveTo(0, 10);
-  context.lineTo(5, 5);
-  context.lineTo(10, 10);
+  //vertical axis
+  context.moveTo(50, 50);
+  context.lineTo(50, 550);
+  context.moveTo(45, 55);
+  context.lineTo(50, 50);
+  context.lineTo(55, 55);
   //ticks on horizontal axis
   context.moveTo(35, 495);
   context.lineTo(35, 505);
@@ -38,12 +38,11 @@ function draw_chart() {
   context.lineTo(450, 505);
   //ticks on vertical axis
 
-  for (var y = 55.5; y < 500; y += 50) {
-  context.moveTo(0, y);
-  context.lineTo(500, y);
+  for (var y = 100.5; y < 550; y += 50) {
+  context.moveTo(50, y);
+  context.lineTo(550.5, y);
   }
 
-  
 
   context.strokeStyle = "#000";
   context.stroke();
@@ -60,12 +59,33 @@ function draw_chart() {
   context.fillText("Top 5%", 430, 530);
 
   // vertical axis labels
-  for (var y = 55.5; y < 500; y += 50) {
-
-  context.fillText("X%", 0, y);
+  for (var y = 100; y < 550; y += 50) {
+  context.textBaseline = "middle";
+  context.fillText("X%", 15, y);
   }
 
-  //draw figures
+
+  //India circles
+  context.beginPath();
+  context.arc(75,545,10,0,2*Math.PI);
+  context.fillStyle = "steelBlue";
+  context.fill();
+
+  context.beginPath();
+  context.arc(300,445,10,0,2*Math.PI);
+  context.fillStyle = "steelBlue";
+  context.fill();
+
+  context.beginPath();
+  context.arc(525,205,10,0,2*Math.PI);
+  context.fillStyle = "steelBlue";
+  context.fill();
+
+};
+
+draw_chart();
+
+ /* draw figures
   var poorPersonIndia = document.getElementById("poorPersonIndia");
   context.drawImage(poorPersonIndia, 0, 480);
 
@@ -82,8 +102,6 @@ function draw_chart() {
   context.drawImage(medianPersonUS, 200, 50);
 
   var richPersonUS = document.getElementById("richPersonUS");
-  context.drawImage(richPersonUS, 400, 0);
+  context.drawImage(richPersonUS, 400, 0); */
 
-};
 
-draw_chart();

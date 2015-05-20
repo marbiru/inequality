@@ -1,3 +1,5 @@
+
+
 google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(drawChart);
   function drawChart() {
@@ -13,7 +15,7 @@ google.load("visualization", "1", {packages:["corechart"]});
       hAxis: {title: 'In-Country Income Distribution', minValue: 0, maxValue: 15},
       vAxis: {title: 'Income in USD (at purchasing power parity)', minValue: 0, maxValue: 15},
       legend: 'none',
-      colors: ['#087037'],
+      colors: ['red'],
       pointSize: 35,
       pointShape: 'star',
       animation: {

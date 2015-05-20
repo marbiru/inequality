@@ -67,7 +67,7 @@ function draw_chart() {
 
   //draw figures
   var poorPersonIndia = document.getElementById("poorPersonIndia");
-  context.drawImage(poorPersonIndia, 0, 450);
+  context.drawImage(poorPersonIndia, 0, 480);
 
   var medianPersonIndia = document.getElementById("medianPersonIndia");
   context.drawImage(medianPersonIndia, 200, 360);
@@ -76,7 +76,7 @@ function draw_chart() {
   context.drawImage(richPersonIndia, 400, 100);
 
   var poorPersonUS = document.getElementById("poorPersonUS");
-  context.drawImage(poorPersonUS, 0, 100);
+  context.drawImage(poorPersonUS, 0, 120);
 
   var medianPersonUS = document.getElementById("medianPersonUS");
   context.drawImage(medianPersonUS, 200, 50);

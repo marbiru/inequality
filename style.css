@@ -4,14 +4,16 @@ h1 {
   font-size: 40px;
   font-family: "Poiret One", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
+
  
 }
 
 p {
   color: #1c2f2f;
   font-size: 24px;
-  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
+  font-weight: lighter;
 }
 
 img {
@@ -45,4 +47,5 @@ img {
 	font-family: "Poiret One", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 20px;
 	font-weight: lighter;
+	text-align: center;
 }

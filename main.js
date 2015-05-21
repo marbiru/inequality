@@ -249,6 +249,15 @@ function draw_main_chart() {
   context.fillStyle = "steelBlue";
   context.fill();
 
+  //India line
+
+  context.beginPath();
+  context.moveTo(small + 25, 545);
+  context.lineTo(small + 250, 445);
+  context.lineTo(525, 220);
+  context.strokeStyle = "steelBlue";
+  context.stroke();
+
    //US poorest
   context.beginPath();
   context.arc(small + 25,210,10,0,2*Math.PI);
@@ -261,12 +270,53 @@ function draw_main_chart() {
   context.fillStyle = "fireBrick";
   context.fill();
 
+  // US line
+
+  context.beginPath();
+  context.moveTo(small + 25, 210);
+  context.lineTo(small + 250, 110);
+  context.lineTo(525,55);
+  context.strokeStyle = "fireBrick";
+  context.stroke();
+
   // horizontal axis top/bottom labels
   context.font = "14px sans-serif";
   context.fillStyle= "#000";
   context.textAlign = 'center';
   context.fillText("Bottom 5%", small + 25, square + 20);
   context.fillText("Top 5%", small + 475, square + 20);
+
+  // horizontal plane divider
+  //red arrow
+  context.beginPath();
+  var temp_height = 210
+  context.moveTo(100, temp_height);
+  context.lineTo(195, temp_height);
+  context.moveTo(105, temp_height - 5);
+  context.lineTo(100, temp_height);
+  context.lineTo(105, temp_height + 5);
+  context.lineWidth=3;
+  context.strokeStyle = "fireBrick";
+  context.stroke();
+  //blue arrow
+  context.beginPath();
+  var temp_height_2 = 220
+  context.moveTo(420, temp_height_2);
+  context.lineTo(500, temp_height_2);
+  context.moveTo(495, temp_height_2 - 5);
+  context.lineTo(500, temp_height_2);
+  context.lineTo(495, temp_height_2 + 5);
+  context.lineWidth = 3;
+  context.strokeStyle = "steelBlue";
+  context.stroke();
+
+  // mid-chart text
+  context.font = "14px sans-serif";
+  context.fillStyle = "fireBrick";
+  context.textAlign = 'left';
+  context.fillText("The very poor person in the US...", 200, temp_height);
+  context.fillStyle = "steelBlue";
+  context.fillText("... has a higher income than the very rich person in India", 120, temp_height + 20);
 
 };
 

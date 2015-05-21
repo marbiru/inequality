@@ -20,6 +20,11 @@ img {
 	max-width:100%;
 }
 
+canvas {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
 #selectable .ui-selecting { 
 	background: #FECA40; 
 }

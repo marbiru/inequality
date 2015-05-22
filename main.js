@@ -1,5 +1,5 @@
-function draw_median_chart() {
-  var chart_canvas = document.getElementById("median_chart");
+function draw_common_chart(canvas_name) {
+  var chart_canvas = document.getElementById( canvas_name );
   var context = chart_canvas.getContext("2d");
   
   //grid lines
@@ -98,47 +98,15 @@ function draw_median_chart() {
   context.textAlign = 'left';
   context.fillText("= U.S.", 450, 9);
 
-  //MAIN CHART ONLY
-  /*
-  //India poorest
-  context.beginPath();
-  context.arc(small + 25,545,10,0,2*Math.PI);
-  context.fillStyle = "steelBlue";
-  context.fill();
-
-  //India richest
-  context.beginPath();
-  context.arc(525,220,10,0,2*Math.PI);
-  context.fillStyle = "steelBlue";
-  context.fill();
-
-   //US poorest
-  context.beginPath();
-  context.arc(small + 25,210,10,0,2*Math.PI);
-  context.fillStyle = "fireBrick";
-  context.fill();
-
-   //US richest
-  context.beginPath();
-  context.arc(525,55,10,0,2*Math.PI);
-  context.fillStyle = "fireBrick";
-  context.fill();
-
-  // horizontal axis top/bottom labels
-  context.font = "14px sans-serif";
-  context.fillStyle= "#000";
-  context.textAlign = 'center';
-  context.fillText("Bottom 5%", small + 25, square + 20);
-  context.fillText("Top 5%", small + 475, square + 20);
-  */
 };
 
-draw_median_chart();
+draw_common_chart( "median_chart" );
 
 function draw_main_chart() {
   var chart_canvas = document.getElementById("chart");
   var context = chart_canvas.getContext("2d");
   
+  /* 
   //grid lines
   for (var x = 50.5; x < 550.5; x += 10) {
   context.moveTo(x, 0);
@@ -152,9 +120,6 @@ function draw_main_chart() {
 
   context.strokeStyle = "#eee";
   context.stroke();
-
-  var square = 550;
-  var small = 50;
 
   //horizontal axis
   context.beginPath();
@@ -234,9 +199,14 @@ function draw_main_chart() {
   context.font = "12 sans-serif";
   context.textAlign = 'left';
   context.fillText("= U.S.", 450, 9);
+  */
 
   //MAIN CHART ONLY
 
+  //TK need to extract connecting lines between datapoints from above
+
+  var square = 550;
+  var small = 50;
   //India poorest
   context.beginPath();
   context.arc(small + 25,545,10,0,2*Math.PI);
@@ -320,4 +290,5 @@ function draw_main_chart() {
 
 };
 
+draw_common_chart( "chart" );
 draw_main_chart();

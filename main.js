@@ -8,9 +8,9 @@ function draw_common_chart(canvas_name) {
   context.lineTo(x, 600.5);
   }
 
-  for (var y = 50.5; y < 5000.5; y += 10) {
+  for (var y = 50.5; y < 550.5; y += 10) {
   context.moveTo(0, y);
-  context.lineTo(5000.5, y);
+  context.lineTo(550.5, y);
   }
 
   context.strokeStyle = "#eee";

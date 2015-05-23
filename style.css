@@ -25,27 +25,8 @@ canvas {
 	margin-bottom: 30px;
 }
 
-#selectable .ui-selecting { 
-	background: #FECA40; 
-}
-
-#selectable .ui-selected { 
-	background: yellow; 
-	color: #1c2f2f; 
-}
-
-#selectable { 
-	list-style-type: none;
-	padding: 3px; 
-	width: 100%;
-	text-align: center; 
-}
-
-#selectable li { 
-	margin: 3px; 
-	padding: 0.4em; 
-	font-size: 1.4em; 
-	height: 18px; 
+.hideme {
+	opacity: 0;
 }
 
 #footer {

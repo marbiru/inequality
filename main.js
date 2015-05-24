@@ -23,6 +23,7 @@ function draw_graph_paper(canvas_name, width, height) {
 draw_graph_paper( "first_image_graph_paper", 1440.5, 300.5 );
 draw_graph_paper( "second_image_graph_paper", 1440.5, 300.5 );
 draw_graph_paper( "median_chart_graph_paper", 1440.5, 600.5 );
+draw_graph_paper( "main_chart_graph_paper", 1440.5, 600.5 );
 
 function draw_common_chart(canvas_name) {
   var chart_canvas = document.getElementById( canvas_name );
@@ -111,7 +112,7 @@ function draw_common_chart(canvas_name) {
 draw_common_chart( "median_chart" );
 
 function draw_main_chart() {
-  var chart_canvas = document.getElementById("chart");
+  var chart_canvas = document.getElementById("main_chart");
   var context = chart_canvas.getContext("2d");
 
   //MAIN CHART ONLY
@@ -201,7 +202,7 @@ function draw_main_chart() {
 
 };
 
-draw_common_chart( "chart" );
+draw_common_chart( "main_chart" );
 draw_main_chart();
 
 
@@ -219,4 +220,13 @@ $(function() {
         }); 
     
     });   
+});
+
+// short version
+
+$(function() {
+    $( "#short_version" ).click(function(){
+        $( "#long_text" ).toggle( "slow" );
+        $( ".button_text" ).toggle();
+    });
 });

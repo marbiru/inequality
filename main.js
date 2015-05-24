@@ -1,16 +1,16 @@
-function draw_graph_paper(canvas_name) {
+function draw_graph_paper(canvas_name, width, height) {
     var chart_canvas = document.getElementById( canvas_name );
   var context = chart_canvas.getContext("2d");
   
   //grid lines
-  for (var x = 0.5; x < 1440.5; x += 10) {
+  for (var x = 0.5; x < width; x += 10) {
   context.moveTo(x, 0);
-  context.lineTo(x, 600.5);
+  context.lineTo(x, height);
   }
 
   for (var y = 25.5; y < 275.5; y += 10) {
   context.moveTo(0, y);
-  context.lineTo(1440.5, y);
+  context.lineTo(width, y);
   }
 
   context.strokeStyle = "#eee";
@@ -20,9 +20,9 @@ function draw_graph_paper(canvas_name) {
   var small = 50;
 }
 
-draw_graph_paper( "median_chart_graph_paper" );
-draw_graph_paper( "first_image_graph_paper" );
-draw_graph_paper( "second_image_graph_paper" );
+draw_graph_paper( "first_image_graph_paper", 1440.5, 600.5 );
+draw_graph_paper( "second_image_graph_paper", 1440.5, 600.5 );
+draw_graph_paper( "median_chart_graph_paper", 1440.5, 600.5 );
 
 function draw_common_chart(canvas_name) {
   var chart_canvas = document.getElementById( canvas_name );

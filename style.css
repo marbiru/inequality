@@ -43,13 +43,18 @@ canvas {
 
 #median_chart_graph_paper {
 	z-index: 1;
+  position: relative;
 }
 
-/* #median_chart {
-	position: relative;
-	top: -700px;
+#median_chart {
 	z-index: 2;
-} */
+  position: relative;
+  top: -650px;
+  margin-bottom: -650px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .caption {
   color: #B3B3B3;

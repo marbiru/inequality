@@ -8,7 +8,7 @@ function draw_graph_paper(canvas_name, width, height) {
   context.lineTo(x, height);
   }
 
-  for (var y = 25.5; y < 275.5; y += 10) {
+  for (var y = 25.5; y < height - 24; y += 10) {
   context.moveTo(0, y);
   context.lineTo(width, y);
   }
@@ -20,27 +20,13 @@ function draw_graph_paper(canvas_name, width, height) {
   var small = 50;
 }
 
-draw_graph_paper( "first_image_graph_paper", 1440.5, 600.5 );
-draw_graph_paper( "second_image_graph_paper", 1440.5, 600.5 );
+draw_graph_paper( "first_image_graph_paper", 1440.5, 300.5 );
+draw_graph_paper( "second_image_graph_paper", 1440.5, 300.5 );
 draw_graph_paper( "median_chart_graph_paper", 1440.5, 600.5 );
 
 function draw_common_chart(canvas_name) {
   var chart_canvas = document.getElementById( canvas_name );
   var context = chart_canvas.getContext("2d");
-  
-  //grid lines
-  for (var x = 50.5; x < 550.5; x += 10) {
-  context.moveTo(x, 0);
-  context.lineTo(x, 600.5);
-  }
-
-  for (var y = 50.5; y < 550.5; y += 10) {
-  context.moveTo(0, y);
-  context.lineTo(550.5, y);
-  }
-
-  context.strokeStyle = "#eee";
-  context.stroke();
 
   var square = 550;
   var small = 50;
@@ -232,6 +218,5 @@ $(function() {
             
         }); 
     
-    });
-    
+    });   
 });

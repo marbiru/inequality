@@ -4,8 +4,9 @@ h1 {
   font-size: 40px;
   font-family: "Poiret One", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
-
- 
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 40px;
 }
 
 p {
@@ -25,11 +26,45 @@ canvas {
 	margin-bottom: 30px;
 }
 
+#first_image_graph_paper {
+  z-index: 1;
+  position: relative;
+}
+
+#first_image {
+  z-index: 2;
+  position: relative;
+  top: -400px;
+  margin-bottom: -400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#median_chart_graph_paper {
+	z-index: 1;
+}
+
+#median_chart {
+	position: relative;
+	top: -700px;
+	z-index: 2;
+}
+
+.caption {
+  color: #B3B3B3;
+  font-size: 16px;
+  font-style: italic;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-weight: lighter;
+}
+
 .hideme {
 	opacity: 0;
 }
 
-#footer {
+.footer {
 	font-family: "Poiret One", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 20px;
 	font-weight: lighter;

@@ -1,3 +1,28 @@
+function draw_graph_paper(canvas_name) {
+    var chart_canvas = document.getElementById( canvas_name );
+  var context = chart_canvas.getContext("2d");
+  
+  //grid lines
+  for (var x = 0.5; x < 1440.5; x += 10) {
+  context.moveTo(x, 0);
+  context.lineTo(x, 600.5);
+  }
+
+  for (var y = 25.5; y < 275.5; y += 10) {
+  context.moveTo(0, y);
+  context.lineTo(1440.5, y);
+  }
+
+  context.strokeStyle = "#eee";
+  context.stroke();
+
+  var square = 550;
+  var small = 50;
+}
+
+draw_graph_paper( "median_chart_graph_paper" );
+draw_graph_paper( "first_image_graph_paper" );
+
 function draw_common_chart(canvas_name) {
   var chart_canvas = document.getElementById( canvas_name );
   var context = chart_canvas.getContext("2d");
@@ -195,22 +220,13 @@ draw_main_chart();
 
 // fade in
 
-$(document).ready(function() {
-    
-    /* Every time the window is scrolled ... */
-    $(window).scroll( function(){
-    
-        /* Check the location of each desired element */
-        $('.hideme').each( function(i){
-            
+$(function() {
+    $(window).scroll( function() {
+        $('.hideme').each( function(i) {
             var middle_of_object = $(this).offset().top + $(this).outerHeight()/2;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
-            
-            /* If the object is completely visible in the window, fade it it */
             if( bottom_of_window > middle_of_object ){
-                
                 $(this).animate({'opacity':'1'},500);
-                    
             }
             
         }); 

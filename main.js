@@ -22,6 +22,7 @@ function draw_graph_paper(canvas_name) {
 
 draw_graph_paper( "median_chart_graph_paper" );
 draw_graph_paper( "first_image_graph_paper" );
+draw_graph_paper( "second_image_graph_paper" );
 
 function draw_common_chart(canvas_name) {
   var chart_canvas = document.getElementById( canvas_name );

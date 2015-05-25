@@ -20,11 +20,6 @@ function draw_graph_paper(canvas_name, width, height) {
   var small = 50;
 }
 
-draw_graph_paper( "first_image_graph_paper", 1440.5, 300.5 );
-draw_graph_paper( "second_image_graph_paper", 1440.5, 300.5 );
-draw_graph_paper( "median_chart_graph_paper", 1440.5, 600.5 );
-draw_graph_paper( "main_chart_graph_paper", 1440.5, 600.5 );
-
 function draw_common_chart(canvas_name) {
   var chart_canvas = document.getElementById( canvas_name );
   var context = chart_canvas.getContext("2d");
@@ -108,8 +103,6 @@ function draw_common_chart(canvas_name) {
   context.fillText("= U.S.", 450, 9);
 
 };
-
-draw_common_chart( "median_chart" );
 
 function draw_main_chart() {
   var chart_canvas = document.getElementById( "main_chart" );
@@ -201,23 +194,3 @@ function draw_main_chart() {
   context.fillText("... has a higher income than the very rich person in India", 120, temp_height + 20);
 
 };
-
-draw_common_chart( "main_chart" );
-draw_main_chart();
-
-
-// fade in
-
-$(function() {
-    $(window).scroll( function() {
-        $('.hideme').each( function(i) {
-            var middle_of_object = $(this).offset().top + $(this).outerHeight()/2;
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            if( bottom_of_window > middle_of_object ){
-                $(this).animate({'opacity':'1'},500);
-            }
-            
-        }); 
-    
-    });   
-});

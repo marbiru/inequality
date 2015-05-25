@@ -2,10 +2,12 @@ h1 {
   color: #1c2f2f;
   background: yellow;
   font-size: 40px;
-  font-family: "Poiret One", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
-
- 
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 40px;
+  font-weight: lighter;
 }
 
 p {
@@ -25,30 +27,58 @@ canvas {
 	margin-bottom: 30px;
 }
 
-#selectable .ui-selecting { 
-	background: #FECA40; 
+#short_version {
+  display: block; 
+  width: 100%;
+  font-size: 24px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
-#selectable .ui-selected { 
-	background: yellow; 
-	color: #1c2f2f; 
+#first_image_graph_paper, #second_image_graph_paper {
+  z-index: 1;
+  position: relative;
 }
 
-#selectable { 
-	list-style-type: none;
-	padding: 3px; 
-	width: 100%;
-	text-align: center; 
+#first_image, #second_image {
+  z-index: 2;
+  position: relative;
+  top: -400px;
+  margin-bottom: -400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#selectable li { 
-	margin: 3px; 
-	padding: 0.4em; 
-	font-size: 1.4em; 
-	height: 18px; 
+#median_chart_graph_paper, #main_chart_graph_paper {
+	z-index: 1;
+  position: relative;
 }
 
-#footer {
+#median_chart, #main_chart {
+	z-index: 2;
+  position: relative;
+  top: -650.5px;
+  margin-bottom: -650.5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.caption {
+  color: #B3B3B3;
+  font-size: 16px;
+  font-style: italic;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.hideme {
+	opacity: 0;
+}
+
+.footer {
 	font-family: "Poiret One", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 20px;
 	font-weight: lighter;

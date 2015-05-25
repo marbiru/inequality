@@ -2,12 +2,11 @@ h1 {
   color: #1c2f2f;
   background: yellow;
   font-size: 40px;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Poiret One", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   padding-top: 8px;
   padding-bottom: 8px;
   margin-bottom: 40px;
-  font-weight: lighter;
 }
 
 p {
@@ -27,14 +26,6 @@ canvas {
 	margin-bottom: 30px;
 }
 
-#short_version {
-  display: block; 
-  width: 100%;
-  font-size: 24px;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-align: center;
-}
-
 #first_image_graph_paper, #second_image_graph_paper {
   z-index: 1;
   position: relative;
@@ -50,16 +41,16 @@ canvas {
   margin-right: auto;
 }
 
-#median_chart_graph_paper, #main_chart_graph_paper {
+#median_chart_graph_paper {
 	z-index: 1;
   position: relative;
 }
 
-#median_chart, #main_chart {
+#median_chart {
 	z-index: 2;
   position: relative;
-  top: -650.5px;
-  margin-bottom: -650.5px;
+  top: -650px;
+  margin-bottom: -650px;
   display: block;
   margin-left: auto;
   margin-right: auto;

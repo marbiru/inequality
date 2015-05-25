@@ -42,14 +42,9 @@ function draw_common_chart(canvas_name) {
   context.moveTo(small - 5, small + 5);
   context.lineTo(small, small);
   context.lineTo(small + 5, small + 5);
-  //tick on horizontal axis
-  context.moveTo(small + 250, square - 5);
-  context.lineTo(small + 250, square + 5);
-  //ticks on vertical axis
-  for (var y = 100.5; y < square; y += 50) {
-  context.moveTo(50, y);
-  context.lineTo(550.5, y);
-  }
+  //vertical axis line
+  context.moveTo(small, small + 250.5);
+  context.lineTo(square, small + 250.5);
   //finally, fill in the lines
   context.strokeStyle = "#000";
   context.stroke();
@@ -58,31 +53,32 @@ function draw_common_chart(canvas_name) {
   context.font = "18px sans-serif";
   context.fillStyle= "#000";
   context.textAlign = 'center';
-  context.fillText("Position in National Income Distribution", small + 250, 595);
+  context.fillText("Income in USD (thousands)", small + 250, 595);
   context.textAlign = 'left';
-  context.fillText("Position in Global Income Distribution", 10, 40);
+  context.fillText("Position in National Income Distribution", 10, 40);
+
+    // vertical axis labels
+  context.fillStyle= "#000";
+  context.textAlign = 'center';
+  context.fillText("National", 20, small + 245);
+  context.fillText("Average", 20, small + 260);
 
   // horizontal axis median label
   context.font = "14px sans-serif";
-  context.fillStyle= "#000";
-  context.textAlign = 'center';
-  context.fillText("National Average", small + 250, square + 20);
-
-  // vertical axis labels
-  for (var y = 100; y < 550; y += 50) {
+ for (var x = 100; x < 550; x += 50) {
   context.textBaseline = "middle";
-  context.fillText( (550 - y)/5 + "%", 30, y);
+  context.fillText( "$" + (x/5 - 10) + "k", x, 560);
   }
 
   //India median
   context.beginPath();
-  context.arc(small + 250,445,10,0,2*Math.PI);
+  context.arc(50 + 5*5, 50 + 5*50, 10, 0 , 2*Math.PI);
   context.fillStyle = "steelBlue";
   context.fill();
 
   //US median
   context.beginPath();
-  context.arc(small + 250,110,10,0,2*Math.PI);
+  context.arc(50 + 53*5, 50 + 5*50, 10, 0, 2*Math.PI);
   context.fillStyle = "fireBrick";
   context.fill();
 
@@ -108,89 +104,50 @@ function draw_main_chart() {
   var chart_canvas = document.getElementById( "main_chart" );
   var context = chart_canvas.getContext("2d");
 
-  //MAIN CHART ONLY
-
   var square = 550;
   var small = 50;
   //India poorest
   context.beginPath();
-  context.arc(small + 25,545,10,0,2*Math.PI);
+  context.arc(50 + 1*5, 50 + 5*95,10,0,2*Math.PI);
   context.fillStyle = "steelBlue";
   context.fill();
 
   //India richest
   context.beginPath();
-  context.arc(525,220,10,0,2*Math.PI);
+  context.arc(50 + 9*5, 50 + 5*5, 10, 0, 2*Math.PI);
   context.fillStyle = "steelBlue";
   context.fill();
 
   //India line
 
   context.beginPath();
-  context.moveTo(small + 25, 545);
-  context.lineTo(small + 250, 445);
-  context.lineTo(525, 220);
+  context.moveTo(50 + 1*5, 50 + 5*95);
+  context.lineTo(50 + 5*5, 50 + 5*50);
+  context.lineTo(50 + 9*5, 50 + 5*5);
   context.strokeStyle = "steelBlue";
   context.stroke();
 
    //US poorest
   context.beginPath();
-  context.arc(small + 25,210,10,0,2*Math.PI);
+  var us_poorest_x = 50 + 10*5
+  context.arc(us_poorest_x, 50 + 5*95, 10, 0, 2*Math.PI);
   context.fillStyle = "fireBrick";
   context.fill();
 
    //US richest
   context.beginPath();
-  context.arc(525,55,10,0,2*Math.PI);
+  var us_richest_x = 50 + 100*5
+  context.arc(us_richest_x, 50 + 5*5, 10, 0, 2*Math.PI);
   context.fillStyle = "fireBrick";
   context.fill();
 
   // US line
 
   context.beginPath();
-  context.moveTo(small + 25, 210);
-  context.lineTo(small + 250, 110);
-  context.lineTo(525,55);
+  context.moveTo(us_poorest_x, 50 + 5*95);
+  context.lineTo(50 + 53*5, 50 + 5*50);
+  context.lineTo(us_richest_x, 50 + 5*5);
   context.strokeStyle = "fireBrick";
   context.stroke();
-
-  // horizontal axis top/bottom labels
-  context.font = "14px sans-serif";
-  context.fillStyle= "#000";
-  context.textAlign = 'center';
-  context.fillText("Bottom 5%", small + 25, square + 20);
-  context.fillText("Top 5%", small + 475, square + 20);
-
-  // horizontal plane divider
-  //red arrow
-  context.beginPath();
-  var temp_height = 210
-  context.moveTo(100, temp_height);
-  context.lineTo(195, temp_height);
-  context.moveTo(105, temp_height - 5);
-  context.lineTo(100, temp_height);
-  context.lineTo(105, temp_height + 5);
-  context.lineWidth=3;
-  context.strokeStyle = "fireBrick";
-  context.stroke();
-  //blue arrow
-  context.beginPath();
-  var temp_height_2 = 220
-  context.moveTo(420, temp_height_2);
-  context.lineTo(500, temp_height_2);
-  context.moveTo(495, temp_height_2 - 5);
-  context.lineTo(500, temp_height_2);
-  context.lineTo(495, temp_height_2 + 5);
-  context.lineWidth = 3;
-  context.strokeStyle = "steelBlue";
-  context.stroke();
-
-  // mid-chart text
-  context.font = "14px sans-serif";
-  context.fillStyle = "fireBrick";
-  context.textAlign = 'left';
-  context.fillText("The very poor person in the US...", 200, temp_height);
-  context.fillStyle = "steelBlue";
-  context.fillText("... has a higher income than the very rich person in India", 120, temp_height + 20);
 
 };

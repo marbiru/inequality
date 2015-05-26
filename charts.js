@@ -15,9 +15,6 @@ function draw_graph_paper(canvas_name, width, height) {
 
   context.strokeStyle = "#eee";
   context.stroke();
-
-  var square = 550;
-  var small = 50;
 }
 
 function draw_common_chart(canvas_name) {
@@ -42,11 +39,15 @@ function draw_common_chart(canvas_name) {
   context.moveTo(small - 5, small + 5);
   context.lineTo(small, small);
   context.lineTo(small + 5, small + 5);
-  //vertical axis line
-  context.moveTo(small, small + 250.5);
-  context.lineTo(square, small + 250.5);
   //finally, fill in the lines
   context.strokeStyle = "#000";
+  context.stroke();
+
+    //vertical axis line
+  context.beginPath();
+  context.moveTo(small - 5, small + 250.5);
+  context.lineTo(square, small + 250.5);
+   context.strokeStyle = "#000";
   context.stroke();
 
   // axis labels
@@ -60,6 +61,7 @@ function draw_common_chart(canvas_name) {
     // vertical axis labels
   context.fillStyle= "#000";
   context.textAlign = 'center';
+  context.font = "14px sans-serif";
   context.fillText("National", 20, small + 245);
   context.fillText("Average", 20, small + 260);
 
@@ -106,6 +108,14 @@ function draw_main_chart() {
 
   var square = 550;
   var small = 50;
+
+  // vertical axis labels
+
+  context.fillStyle= "#000";
+  context.textAlign = 'center';
+  context.fillText("Top 5%", 20, small + 5*5);
+  context.fillText("Bottom 5%", 20, small + 5*95);
+
   //India poorest
   context.beginPath();
   context.arc(50 + 1*5, 50 + 5*95,10,0,2*Math.PI);

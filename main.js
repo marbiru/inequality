@@ -6,9 +6,11 @@ draw_graph_paper( "median_chart_graph_paper", 1440.5, 600.5 );
 draw_graph_paper( "main_chart_graph_paper", 1440.5, 600.5 );
 
 draw_common_chart( "median_chart" );
+draw_median_data();
 
 draw_common_chart( "main_chart" );
 draw_main_chart();
+draw_other_data();
 
 
 // fade in

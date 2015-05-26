@@ -72,18 +72,6 @@ function draw_common_chart(canvas_name) {
   context.fillText( "$" + (x/5 - 10) + "k", x, 560);
   }
 
-  //India median
-  context.beginPath();
-  context.arc(50 + 5*5, 50 + 5*50, 10, 0 , 2*Math.PI);
-  context.fillStyle = "steelBlue";
-  context.fill();
-
-  //US median
-  context.beginPath();
-  context.arc(50 + 53*5, 50 + 5*50, 10, 0, 2*Math.PI);
-  context.fillStyle = "fireBrick";
-  context.fill();
-
   //legend
   //India
   context.beginPath();
@@ -102,6 +90,22 @@ function draw_common_chart(canvas_name) {
 
 };
 
+function draw_median_data() {
+  var chart_canvas = document.getElementById( "median_data" );
+  var context = chart_canvas.getContext("2d");
+  //India median
+  context.beginPath();
+  context.arc(50 + 5*5, 50 + 5*50, 10, 0 , 2*Math.PI);
+  context.fillStyle = "steelBlue";
+  context.fill();
+
+  //US median
+  context.beginPath();
+  context.arc(50 + 53*5, 50 + 5*50, 10, 0, 2*Math.PI);
+  context.fillStyle = "fireBrick";
+  context.fill();
+};
+
 function draw_main_chart() {
   var chart_canvas = document.getElementById( "main_chart" );
   var context = chart_canvas.getContext("2d");
@@ -115,6 +119,23 @@ function draw_main_chart() {
   context.textAlign = 'center';
   context.fillText("Top 5%", 20, small + 5*5);
   context.fillText("Bottom 5%", 20, small + 5*95);
+
+};
+
+function draw_other_data() {
+  var chart_canvas = document.getElementById( "main_data" );
+  var context = chart_canvas.getContext("2d");
+  //India median
+  context.beginPath();
+  context.arc(50 + 5*5, 50 + 5*50, 10, 0 , 2*Math.PI);
+  context.fillStyle = "steelBlue";
+  context.fill();
+
+  //US median
+  context.beginPath();
+  context.arc(50 + 53*5, 50 + 5*50, 10, 0, 2*Math.PI);
+  context.fillStyle = "fireBrick";
+  context.fill();
 
   //India poorest
   context.beginPath();
@@ -159,5 +180,4 @@ function draw_main_chart() {
   context.lineTo(us_richest_x, 50 + 5*5);
   context.strokeStyle = "fireBrick";
   context.stroke();
-
 };

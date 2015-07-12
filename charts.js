@@ -1,6 +1,7 @@
   var buffer = 50;
   var width_buffer = 200;
   var height_buffer = 50;
+  var height_buffer_plus = height_buffer + 20;
   var chart_width = 500;
   var chart_height = 500;
   var chart_width_plus = chart_width + width_buffer;
@@ -60,7 +61,7 @@ function draw_common_chart(canvas_name) {
   context.font = "18px sans-serif";
   context.fillStyle= "#000";
   context.textAlign = 'center';
-  context.fillText("Income in USD (thousands)", width_buffer + chart_width/2, 595);
+  context.fillText("Income in USD", width_buffer + chart_width/2, 595);
   var start_width = width_buffer - 150;
   var start_height = height_buffer + (chart_height - 50)/2;
   var line_break = 20;
@@ -80,7 +81,7 @@ function draw_common_chart(canvas_name) {
   context.font = "14px sans-serif";
  for (var x = width_buffer + 50; x < chart_width_plus; x += 50) {
   context.textBaseline = "middle";
-  context.fillText( "$" + (x/5 - 20) + "k", x, 560);
+  context.fillText( "$" + (x/5 - 40) + "k", x, 560);
   }
 
   //legend
@@ -106,13 +107,13 @@ function draw_median_data() {
   var context = chart_canvas.getContext("2d");
   //India median
   context.beginPath();
-  context.arc(width_buffer + 5*5, height_buffer + 5*50, 10, 0 , 2*Math.PI);
+  context.arc(width_buffer + 1.5*5, height_buffer_plus + 5*50, 10, 0 , 2*Math.PI);
   context.fillStyle = "steelBlue";
   context.fill();
 
   //US median
   context.beginPath();
-  context.arc(width_buffer + 53*5, height_buffer + 5*50, 10, 0, 2*Math.PI);
+  context.arc(width_buffer + 50.5*5, height_buffer_plus + 5*50, 10, 0, 2*Math.PI);
   context.fillStyle = "fireBrick";
   context.fill();
 };
@@ -134,56 +135,74 @@ function draw_other_data() {
   var context = chart_canvas.getContext("2d");
   //India median
   context.beginPath();
-  context.arc(width_buffer + 5*5, height_buffer + 5*50, 10, 0 , 2*Math.PI);
+  context.arc(width_buffer + 1.5*5, height_buffer_plus + 5*50, 7, 0 , 2*Math.PI);
   context.fillStyle = "steelBlue";
   context.fill();
 
   //US median
   context.beginPath();
-  context.arc(width_buffer + 53*5, height_buffer + 5*50, 10, 0, 2*Math.PI);
+  context.arc(width_buffer + 50.5*5, height_buffer_plus + 5*50, 7, 0, 2*Math.PI);
   context.fillStyle = "fireBrick";
   context.fill();
 
   //India poorest
   context.beginPath();
-  context.arc(width_buffer + 1*5, height_buffer + 5*95,10,0,2*Math.PI);
+  context.arc(width_buffer + 1*5, height_buffer_plus + 5*95, 7, 0, 2*Math.PI);
   context.fillStyle = "steelBlue";
   context.fill();
 
   //India richest
   context.beginPath();
-  context.arc(width_buffer + 9*5, height_buffer + 5*5, 10, 0, 2*Math.PI);
+  context.arc(width_buffer + 9*5, height_buffer_plus + 5*5, 7, 0, 2*Math.PI);
   context.fillStyle = "steelBlue";
   context.fill();
 
   //India line
   context.beginPath();
-  context.moveTo(width_buffer + 1*5, height_buffer + 5*95);
-  context.lineTo(width_buffer + 5*5, height_buffer + 5*50);
-  context.lineTo(width_buffer + 9*5, height_buffer + 5*5);
+  context.moveTo(width_buffer + 0.5*5, height_buffer_plus + 5*95);
+  context.lineTo(width_buffer + 1.5*5, height_buffer_plus + 5*50);
+  context.lineTo(width_buffer + 9*5, height_buffer_plus + 5*5);
   context.strokeStyle = "steelBlue";
   context.stroke();
 
    //US poorest
   context.beginPath();
   var us_poorest_x = width_buffer + 10*5
-  context.arc(us_poorest_x, height_buffer + 5*95, 10, 0, 2*Math.PI);
+  context.arc(us_poorest_x, height_buffer_plus + 5*95, 7, 0, 2*Math.PI);
   context.fillStyle = "fireBrick";
   context.fill();
 
    //US richest
   context.beginPath();
   var us_richest_x = width_buffer + 200*5
-  context.arc(us_richest_x, height_buffer + 5*5, 10, 0, 2*Math.PI);
+  context.arc(us_richest_x, height_buffer_plus + 5*5, 7, 0, 2*Math.PI);
   context.fillStyle = "fireBrick";
   context.fill();
 
   // US line
 
   context.beginPath();
-  context.moveTo(us_poorest_x, height_buffer + 5*95);
-  context.lineTo(width_buffer + 53*5, height_buffer + 5*50);
-  context.lineTo(us_richest_x, height_buffer + 5*5);
+  context.moveTo(us_poorest_x, height_buffer_plus + 5*95);
+  context.lineTo(width_buffer + 50.5*5, height_buffer_plus + 5*50);
+  context.lineTo(us_richest_x, height_buffer_plus + 5*5);
   context.strokeStyle = "fireBrick";
   context.stroke();
+
+  // US Arrow
+  context.beginPath();
+  context.moveTo(789, 215);
+  context.lineTo(799, 215);
+  context.lineTo(793, 223);
+  context.strokeStyle = "fireBrick";
+  context.stroke();
+
+  // Separation Bar
+  context.beginPath();
+  context.moveTo(250, 50);
+  context.lineTo(250, 550);
+  context.strokeStyle = "Grey";
+  context.stroke();
+
+
+
 };

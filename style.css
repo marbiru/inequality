@@ -73,6 +73,7 @@ canvas {
   font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: center;
   font-weight: lighter;
+  margin-top: 30px;
 }
 
 .hideme {
